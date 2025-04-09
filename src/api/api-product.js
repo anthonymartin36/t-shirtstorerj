@@ -10,3 +10,12 @@ export async function getAllProducts (){
     throw console.error('Error fetching products', error);
   }
 }
+
+export async function getAProduct (productId){
+  try {
+    const response = await request.get(`${rootUrl}/products/${productId}`);
+    return response.body;
+  } catch (error) {
+    throw console.error('Error fetching products', error);
+  }
+}
